@@ -1669,7 +1669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minY: -5
-  maxVelocity: 15
+  maxVelocity: 12
   canMove: 0
   gameManager: {fileID: 572276655}
   hitClip: {fileID: 8300000, guid: 9ba9c45e8ca9eb046a999b2b2f1b0215, type: 3}

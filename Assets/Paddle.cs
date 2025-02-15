@@ -8,12 +8,20 @@ public class Paddle : MonoBehaviour
 
     private void Update()
     {
-        movementHorizontal = Input.GetAxis("Horizontal");
 
-        if((movementHorizontal > 0 && transform.position.x < maxX) || (movementHorizontal < 0 && transform.position.x > -maxX))
+        //movementHorizontal = Input.GetAxis("Horizontal");
+
+        movementHorizontal = ReadMousePosition().x - transform.position.x;
+
+        if ((movementHorizontal > 0 && transform.position.x < maxX) || (movementHorizontal < 0 && transform.position.x > -maxX))
         {
             transform.position += Vector3.right * movementHorizontal * speed * Time.deltaTime;
         }
-    
+    }
+
+
+    Vector2 ReadMousePosition()
+    {
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 }
