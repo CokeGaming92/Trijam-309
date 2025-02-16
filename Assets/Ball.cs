@@ -9,6 +9,8 @@ public class Ball : MonoBehaviour
     public GameManager gameManager;
     public AudioClip hitClip;
 
+    public Pickup pickup;
+
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
@@ -76,6 +78,12 @@ public class Ball : MonoBehaviour
         {
             gameManager.AddScore(5f);
             PlaySound(hitClip);
+
+            if ( pickup != null )
+            {
+                pickup.SpawnPickup(collision.transform.position);
+            }
+
             Destroy(collision.gameObject);
         }
     }
